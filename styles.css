@@ -190,7 +190,16 @@ h1 em, h2 em {
 }
 .button-row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 42px; }
 
+@media (min-width: 1021px) {
+  .home-hero .button-row {
+    margin-top: 32px;
+    margin-bottom: 10px;
+  }
+}
+
 .hero-media {
+  position: relative;
+  z-index: 2;
   height: 698px;
   border-radius: 0 0 140px 140px;
   overflow: hidden;
@@ -239,9 +248,9 @@ h1 em, h2 em {
 .wave-bottom { bottom: -1px; height: 210px; }
 .wave-top { top: -1px; height: 210px; transform: translateY(-60%); }
 .decor { position: absolute; pointer-events: none; }
-.decor-dots { width: 260px; right: 22px; top: 78px; opacity: .7; }
-.decor-circle-left { width: 220px; left: 4vw; top: 90px; }
-.decor-circle-right { width: 220px; right: 5vw; bottom: 80px; }
+.decor-dots { width: 260px; right: 0; top: 0; z-index: 1; opacity: .7; }
+.decor-circle-left { width: 220px; left: 0; top: 0; z-index: 0; }
+.decor-circle-right { width: 220px; right: 0; bottom: 0; z-index: 0; }
 
 .section {
   position: relative;
@@ -287,6 +296,8 @@ h1 em, h2 em {
 .metrics img { height: 140px; width: 2px; }
 
 .split-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(300px, 610px) minmax(0, 1fr);
   gap: clamp(48px, 7vw, 90px);
@@ -371,20 +382,51 @@ h1 em, h2 em {
   color: var(--green);
   font-size: 27px;
 }
+.steps-section {
+  background: #f5eee4;
+}
+.steps-section .eyebrow {
+  color: var(--terracotta);
+}
 
 .bottom-cta {
   position: relative;
   overflow: hidden;
-  padding: 150px 0 130px;
-  background: linear-gradient(135deg, #f5eee4, var(--sand));
+  min-height: 227px;
+  padding: 0;
+  background: var(--terracotta);
 }
 .cta-grid {
+  position: relative;
+  z-index: 1;
+  min-height: 227px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
 }
-.cta-grid h2 { max-width: 620px; }
+.bottom-circle2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  width: min(720px, 50vw);
+  height: auto;
+  pointer-events: none;
+}
+.bottom-cta .eyebrow {
+  padding-top: 18px;
+  margin-bottom: 24px;
+  color: var(--green);
+}
+.bottom-cta h2 {
+  max-width: none;
+  color: var(--cream);
+  font-size: clamp(2.2rem, 3.7vw, 3.4rem);
+}
+.bottom-cta .btn-solid {
+  flex: 0 0 auto;
+}
 
 .site-footer {
   background: var(--green);
