@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 373.26926 359.09167"
+   aria-hidden="true"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="bottomcircle.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   width="373.26926"
+   height="359.09167"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.7633475"
+     inkscape:cx="112.28643"
+     inkscape:cy="112.85353"
+     inkscape:window-width="2560"
+     inkscape:window-height="1411"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <g
+     id="svg-bottomcircle"
+     transform="translate(-1075.2997,-3128.9083)">
+    <path
+       class="cls-19"
+       d="m 1448.5689,3162.12 c -35.3,-20.42 -76.28,-32.12 -120,-32.12 -132.55,0 -240,107.45 -240,240 0,42.89 11.27,83.15 30.98,118 h 329.02 z"
+       id="path143"
+       style="opacity:0.18;isolation:isolate;fill:#c06c46" />
+  </g>
+</svg>
