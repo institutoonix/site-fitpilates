@@ -28,9 +28,19 @@ img { max-width: 100%; display: block; }
   position: sticky;
   top: 0;
   z-index: 50;
+  isolation: isolate;
   background: rgba(255,253,249,.96);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(12px);
+}
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: transparent;
+  pointer-events: none;
+  transition: opacity .5s ease;
 }
 
 .header-inner {
@@ -592,6 +602,14 @@ h1 em, h2 em {
     display: block;
     justify-self: end;
   }
+  .site-header.menu-open {
+    background: transparent;
+    backdrop-filter: none;
+  }
+  .site-header.menu-open::before {
+    background: #fffdf9;
+    opacity: .75;
+  }
   .nav-shell {
     grid-column: 1 / -1;
     grid-row: 2;
@@ -603,7 +621,7 @@ h1 em, h2 em {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    background: rgba(255, 253, 249, .75);
+    background: transparent;
     transition: opacity .5s ease, max-height .5s ease, padding .5s ease, visibility 0s linear .5s;
   }
   .site-header.menu-open .nav-shell {
