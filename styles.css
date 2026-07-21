@@ -561,7 +561,7 @@ h1 em, h2 em {
 .info-section > .eyebrow,
 .info-section > h2,
 .info-section > ul {
-  width: min(var(--max), calc(100% - 48px));
+  width: min(var(--max), calc(100% - clamp(64px, 12vw, 184px)));
   margin-left: auto;
   margin-right: auto;
 }
@@ -580,7 +580,13 @@ h1 em, h2 em {
 @media (max-width: 1020px) {
   .header-inner {
     grid-template-columns: 190px auto;
-    height: 86px;
+    grid-template-rows: 86px auto;
+    height: auto;
+    min-height: 86px;
+  }
+  .logo-link,
+  .menu-toggle {
+    grid-row: 1;
   }
   .menu-toggle {
     display: block;
@@ -588,17 +594,33 @@ h1 em, h2 em {
   }
   .nav-shell {
     grid-column: 1 / -1;
-    display: none;
-    padding: 16px 0 24px;
+    grid-row: 2;
+    display: block;
+    max-height: 0;
+    margin: 0 -24px;
+    padding: 0 24px;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(255, 253, 249, .75);
+    transition: opacity .5s ease, max-height .5s ease, padding .5s ease, visibility 0s linear .5s;
   }
-  .site-header.menu-open .nav-shell { display: block; }
+  .site-header.menu-open .nav-shell {
+    max-height: 430px;
+    padding: 48px 24px 30px;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity .5s ease, max-height .5s ease, padding .5s ease, visibility 0s;
+  }
   .nav-links,
   .header-actions {
     align-items: stretch;
     flex-direction: column;
     gap: 14px;
   }
-  .nav-links { margin-bottom: 18px; }
+  .nav-links { margin-bottom: 30px; }
   .header-actions .btn { width: 100%; }
   .hero,
   .packages-hero { min-height: auto; }
@@ -649,11 +671,6 @@ h1 em, h2 em {
   .plans-grid,
   .footer-inner,
   .header-inner {
-    width: min(100% - 32px, var(--max));
-  }
-  .info-section > .eyebrow,
-  .info-section > h2,
-  .info-section > ul {
     width: min(100% - 32px, var(--max));
   }
   .section { padding: 82px 0; }
