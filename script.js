@@ -34,7 +34,7 @@
         <div class="header-actions">
           ${page === "pacotes"
             ? '<a class="btn btn-outline" href="index.html">Principal</a>'
-            : '<a class="btn btn-outline" href="pacotes.html">Ver planos</a>'}
+            : '<a class="btn btn-outline" href="#section-method">Nosso método</a>'}
           <a class="btn btn-solid" href="${links.reserve}">Reservar</a>
         </div>
       </div>
