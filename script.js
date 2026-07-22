@@ -26,8 +26,7 @@
       </button>
       <div class="nav-shell" id="site-menu">
         <nav class="nav-links" aria-label="Principal">
-          <a class="nav-text" href="${sectionHref("section-method")}">O método</a>
-          <a class="nav-text" href="${sectionHref("section-rhythm")}">A experiência</a>
+          <a class="nav-text" href="${sectionHref("section-rhythm")}">Experiência</a>
           <a class="nav-text" href="${links.schedules}">Horários</a>
           <a class="nav-text" href="${sectionHref("section-reformer")}">Estrutura</a>
         </nav>
