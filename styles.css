@@ -381,6 +381,19 @@ h1 em, h2 em {
   align-content: start;
   gap: 18px;
 }
+.step-icon-button {
+  display: inline-flex;
+  width: 88px;
+  transition: transform .5s ease-in-out;
+}
+.step-icon-button:hover,
+.step-icon-button:focus-visible {
+  transform: scale(1.15);
+}
+.step-icon-button:focus-visible {
+  outline: 3px solid rgba(192,108,70,.35);
+  outline-offset: 6px;
+}
 .steps-grid img { width: 88px; }
 .steps-grid span {
   color: var(--terracotta);
