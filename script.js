@@ -9,6 +9,12 @@
   };
 
   const page = document.body.dataset.page || "main";
+  const isInstitutionalPage = page === "pacotes";
+  const isFitPilatesPage = document.body.dataset.site === "fitpilates";
+  const logoSrc = isInstitutionalPage
+    ? "assets/frontpage/Onix-Instituto-logo.svg"
+    : "assets/onixfitlogo.svg";
+  const logoAlt = isInstitutionalPage ? "Instituto Onix" : "ONIX Fit Pilates";
   const header = document.querySelector("[data-header]");
   const footer = document.querySelector("[data-footer]");
 
@@ -18,17 +24,21 @@
 
   header.innerHTML = `
     <div class="header-inner">
-      <a class="logo-link" href="index.html#section-hero" aria-label="ONIX Fit Pilates">
-        <img src="assets/onixfitlogo.svg" alt="ONIX Fit Pilates">
+      <a class="logo-link" href="index.html#section-hero" aria-label="${logoAlt}">
+        <img src="${logoSrc}" alt="${logoAlt}">
       </a>
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu">
         <span></span><span></span><span></span>
       </button>
       <div class="nav-shell" id="site-menu">
         <nav class="nav-links" aria-label="Principal">
-          <a class="nav-text" href="${sectionHref("section-rhythm")}">Experiência</a>
-          <a class="nav-text" href="${links.schedules}">Horários</a>
-          <a class="nav-text" href="${sectionHref("section-reformer")}">Estrutura</a>
+          <a class="nav-text" href="${isFitPilatesPage ? "index.html" : isInstitutionalPage ? "index.html#experiencia" : sectionHref("section-rhythm")}">${isFitPilatesPage ? "Principal" : "Experiência"}</a>
+          ${isInstitutionalPage
+            ? '<a class="nav-text" href="#section-creditos">Planos</a>'
+            : `<a class="nav-text" href="${links.schedules}">Horários</a>`}
+          ${isInstitutionalPage
+            ? '<a class="nav-text" href="#section-important-info">Informações</a>'
+            : `<a class="nav-text" href="${sectionHref("section-reformer")}">Estrutura</a>`}
         </nav>
         <div class="header-actions">
           ${page === "pacotes"
@@ -42,10 +52,10 @@
 
   footer.innerHTML = `
     <div class="footer-inner">
-      <a class="logo-link" href="index.html#section-hero" aria-label="ONIX Fit Pilates">
-        <img src="assets/onixfitlogo.svg" alt="ONIX Fit Pilates">
+      <a class="logo-link" href="index.html#section-hero" aria-label="${logoAlt}">
+        <img src="${logoSrc}" alt="${logoAlt}">
       </a>
-      <a class="footer-address" href="${links.maps}" target="_blank" rel="noopener">Av. Dr. Sílvio Cabral Santana, 399 - Lj 03, Aruana, Aracaju</a>
+      <a class="footer-address" href="${links.maps}" target="_blank" rel="noopener">${isInstitutionalPage ? "Matriz: R. Manoel Espinheira Fonseca, 603 - Lj 03, Aruana, Aracaju" : "Av. Dr. Sílvio Cabral Santana, 399 - Lj 03, Aruana, Aracaju"}</a>
       <nav class="footer-links" aria-label="Redes sociais e políticas">
         <a href="${links.instagram}" target="_blank" rel="noopener">Instagram</a>
         <span>•</span>
