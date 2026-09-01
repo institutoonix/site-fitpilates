@@ -502,6 +502,12 @@ h1 em, h2 em {
   display: grid;
   gap: 30px;
 }
+.plans-grid2 {
+  width: min(680px, calc(100% - 54px));
+  margin: 0 auto;
+  display: grid;
+  gap: 30px;
+}
 .pricing-grid { grid-template-columns: repeat(3, 1fr); }
 .plans-grid { grid-template-columns: repeat(2, minmax(280px, 350px)); justify-content: center; }
 .price-card {
@@ -520,7 +526,20 @@ h1 em, h2 em {
   width: min(350px, calc(100% - 48px));
   min-height: 416px;
 }
+.promo-card-wide {
+  align-items: center;
+  width: min(480px, calc(100% - 48px));
+  min-height: 416px; 
+  justify-items: start; justify-content: flex-start;
+}
 .plan-card { min-height: 430px; }
+.plan-card-wide { 
+  align-items: center;
+  align-self: center;
+  width: min(680px, calc(100%));
+  min-height: 430px; 
+  justify-items: center; justify-content: centered;
+}
 .badge {
   align-self: center;
   margin-top: -68px;
