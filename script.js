@@ -11,6 +11,9 @@
   const page = document.body.dataset.page || "main";
   const isInstitutionalPage = page === "pacotes";
   const isFitPilatesPage = document.body.dataset.site === "fitpilates";
+  const reserveLink = isInstitutionalPage
+    ? "https://venda.nextfit.com.br/efada994-00bd-4058-97c7-7124baa73f29/contratos"
+    : links.reserve;
   const logoSrc = isInstitutionalPage
     ? "assets/frontpage/Onix-Instituto-logo.svg"
     : "assets/onixfitlogo.svg";
@@ -44,7 +47,7 @@
           ${page === "pacotes"
             ? '<a class="btn btn-outline" href="index.html">Principal</a>'
             : '<a class="btn btn-outline" href="#section-method">Nosso método</a>'}
-          <a class="btn btn-solid" href="${links.reserve}">Reservar</a>
+          <a class="btn btn-solid" href="${reserveLink}">Reservar</a>
         </div>
       </div>
     </div>
